@@ -7,6 +7,7 @@ function Header() {
       <h1>Project Management Board</h1>
       <nav>
         <RouterLink to="/" className="Nav-link">Board</RouterLink>
+        |
         <RouterLink to="/backlog" className="Nav-link">Backlog</RouterLink>
       </nav>
     </div>
