@@ -8,7 +8,9 @@ const lanes = [
   { id: 3, title: "Review" },
   { id: 4, title: "Done" },
 ];
-
+function onDragOver(e) {
+  e.preventDefault()
+}
 function Board() {
   const [loading, error, tasks] = useDataFetching(
     "https://my-json-server.typicode.com/PacktPublishing/React-Projects-Second-Edition/tasks"
@@ -22,6 +24,7 @@ function Board() {
           loading={loading}
           tasks={tasks.filter((task) => task.lane == lane.id)}
           error={error}
+          onDragOver={(e) => onDragOver(e)}
         />
       ))}
     </div>
